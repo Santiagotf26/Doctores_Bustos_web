@@ -1,0 +1,205 @@
+.section {
+  padding: 4rem 0;
+  background: #fff;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+/* Left Content */
+.leftContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.title {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: var(--text-h);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.desc {
+  font-size: 0.9rem;
+  color: var(--text);
+  line-height: 1.7;
+  max-width: 400px;
+}
+
+/* Doctor Card */
+.doctorCard {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.doctorImg {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-lg);
+  object-fit: cover;
+}
+
+.doctorInfo h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-h);
+  margin-bottom: 0.15rem;
+}
+
+.doctorInfo p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 0.35rem;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.rating span {
+  font-weight: 500;
+}
+
+.doctorDesc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  max-width: 320px;
+}
+
+/* Right Content */
+.rightContent {
+  position: relative;
+}
+
+.clinicImageWrap {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  height: 320px;
+  box-shadow: var(--shadow);
+}
+
+.clinicImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Stats Card */
+.statsCard {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.5rem;
+  box-shadow: var(--shadow-xl);
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  min-width: 280px;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.statDivider {
+  width: 1px;
+  height: 40px;
+  background: var(--border);
+}
+
+.statLabel {
+  font-size: 0.65rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.statValue {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-h);
+  line-height: 1;
+}
+
+.statSub {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.progressBar {
+  width: 60px;
+  height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+  margin-top: 0.2rem;
+  position: relative;
+}
+
+.progressFill {
+  height: 100%;
+  background: var(--primary);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.progressText {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  margin-top: 0.15rem;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .statsCard {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    margin-top: -20px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 3rem 0;
+  }
+  .statsCard {
+    min-width: auto;
+    padding: 1rem;
+    gap: 1rem;
+  }
+  .statValue {
+    font-size: 1.25rem;
+  }
+}

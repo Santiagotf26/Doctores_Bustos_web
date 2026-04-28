@@ -1,84 +1,104 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Play, User, Phone, Calendar, Clock } from 'lucide-react';
+import React, { useState, useEffect, useCallback } from 'react';
+import { ChevronLeft, ChevronRight, Star, ArrowRight, ChevronDown, Phone } from 'lucide-react';
 import styles from './Hero.module.css';
-import Button from '../ui/Button';
-import dentistImage from '../../assets/hero_v2.png';
+import heroImage from '../../assets/hero_dentist.png';
+import doctorThumb from '../../assets/service_odontologia.png';
+
+const WA_LINK = 'https://wa.me/573027447175?text=Hola%2C%20quiero%20agendar%20una%20cita';
+
+const services = ['Dental Checkup', 'Teeth Cleaning', 'Tooth Filling', 'Gum Treatment', 'Retainers'];
+
+const processSteps = ['Smile Assessment', 'Care Planning', 'Treatment Process', 'Dental Maintenance'];
 
 const Hero = () => {
+  const [current, setCurrent] = useState(0);
+  const totalSlides = 5;
+
+  const goNext = useCallback(() => setCurrent(p => (p + 1) % totalSlides), []);
+  const goPrev = useCallback(() => setCurrent(p => (p - 1 + totalSlides) % totalSlides), []);
+
+  useEffect(() => {
+    const t = setInterval(goNext, 6000);
+    return () => clearInterval(t);
+  }, [goNext]);
+
   return (
     <section id="inicio" className={styles.hero}>
-      <div className={`container ${styles.heroContainer}`}>
-        <div className={styles.content}>
-          <div className={styles.badge}>
-            <span className={styles.badgeIcon}>🦷</span>
-            <span>Cuidado Dental de Primera Clase</span>
-          </div>
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className={styles.title}
-          >
-            Tu <span className={styles.highlight}>Mejor Sonrisa</span> <br />
-            Comienza <span className={styles.highlight}>Aquí</span>
-          </motion.h1>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className={styles.description}
-          >
-            Ofrecemos tratamientos odontológicos avanzados con la última tecnología y un equipo humano excepcional en Duitama.
-          </motion.p>
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className={styles.actions}
-          >
-            <Button variant="primary" size="lg" className={styles.roundedBtn}>Ver Servicios</Button>
-            <button className={styles.watchVideo}>
-              <div className={styles.playIcon}><Play size={16} fill="currentColor" /></div>
-              <span>Ver Video</span>
-            </button>
-          </motion.div>
-        </div>
-        
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8 }}
-          className={styles.imageContainer}
-        >
-          <div className={styles.blueCircle}></div>
-          <img src={dentistImage} alt="Dentista" className={styles.dentistImage} />
-        </motion.div>
+      {/* Background Image */}
+      <div className={styles.bgImage}>
+        <img src={heroImage} alt="Dental care" />
+        <div className={styles.overlay} />
       </div>
 
-      {/* Appointment Bar */}
-      <div className={`container ${styles.bookingContainer}`}>
-        <div className={styles.bookingBar}>
-          <div className={styles.bookingItem}>
-            <label><User size={16} /> Nombre</label>
-            <input type="text" placeholder="Tu nombre" />
+      {/* Content */}
+      <div className={`container ${styles.content}`}>
+        <div className={styles.textCol}>
+          <h1 className={styles.title}>
+            Family-Friendly<br/>Dental Care
+          </h1>
+          <p className={styles.desc}>
+            Permanent natural-looking solutions to replace missing teeth and restore confident healthy smiles.
+          </p>
+          <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className={styles.ctaBtn}>
+            Book a Appointment <span className={styles.ctaIcon}><Phone size={14} /></span>
+          </a>
+
+          {/* Floating card */}
+          <div className={styles.floatingCard}>
+            <div className={styles.cardThumb}>
+              <img src={doctorThumb} alt="Doctor" />
+            </div>
+            <div className={styles.cardContent}>
+              <p>Restore natural healthy confident dental growth.</p>
+              <div className={styles.ratingRow}>
+                <div className={styles.stars}>
+                  {[...Array(5)].map((_,i) => <Star key={i} size={10} fill="#fbbf24" color="#fbbf24" />)}
+                </div>
+                <span>4.9 Rating</span>
+              </div>
+            </div>
           </div>
-          <div className={styles.divider}></div>
-          <div className={styles.bookingItem}>
-            <label><Phone size={16} /> Teléfono</label>
-            <input type="text" placeholder="Tu número" />
+        </div>
+      </div>
+
+      {/* Bottom Bar */}
+      <div className={styles.bottomBar}>
+        <div className={`container ${styles.bottomInner}`}>
+          <div className={styles.bottomLeft}>
+            <span className={styles.motto}>Your Teeth Our Science</span>
           </div>
-          <div className={styles.divider}></div>
-          <div className={styles.bookingItem}>
-            <label><Calendar size={16} /> Fecha</label>
-            <input type="text" placeholder="dd/mm/aaaa" />
+
+          <div className={styles.sliderControls}>
+            <button onClick={goPrev} className={styles.arrowBtn}><ChevronLeft size={16} /></button>
+            <span className={styles.slideCount}>
+              <strong>Preview</strong> {String(current + 1).padStart(2, '0')} / {String(totalSlides).padStart(2, '0')} <strong>Next</strong>
+            </span>
+            <button onClick={goNext} className={styles.arrowBtn}><ChevronRight size={16} /></button>
           </div>
-          <div className={styles.divider}></div>
-          <div className={styles.bookingItem}>
-            <label><Clock size={16} /> Hora</label>
-            <input type="text" placeholder="00:00" />
+
+          <div className={styles.bottomRight}>
+            <span className={styles.scrollHint}>Scroll for More <ChevronDown size={14} /></span>
           </div>
-          <Button variant="primary" className={styles.bookingBtn}>Agendar Cita</Button>
+        </div>
+      </div>
+
+      {/* Service Pills */}
+      <div className={styles.pillsBar}>
+        <div className={`container ${styles.pillsInner}`}>
+          {services.map((s, i) => (
+            <a key={i} href="#servicios" className={styles.pill}>{s}</a>
+          ))}
+        </div>
+      </div>
+
+      {/* Process Steps */}
+      <div className={styles.processBar}>
+        <div className={`container ${styles.processInner}`}>
+          {processSteps.map((step, i) => (
+            <div key={i} className={styles.processStep}>
+              <span className={styles.stepName}>{step}</span>
+            </div>
+          ))}
         </div>
       </div>
     </section>

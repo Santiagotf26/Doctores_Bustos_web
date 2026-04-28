@@ -1,0 +1,128 @@
+.section {
+  padding: 5rem 0;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  background: var(--primary-light);
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 0.8rem;
+  border-radius: var(--radius-pill);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--secondary);
+  margin-bottom: 1rem;
+}
+
+.title span {
+  color: var(--primary);
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+.card {
+  background: white;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.cardImage {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.cardImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .cardImage img {
+  transform: scale(1.05);
+}
+
+.cardTag {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: 0.3rem 0.85rem;
+  border-radius: var(--radius-pill);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.cardBody {
+  padding: 1.5rem;
+}
+
+.cardBody h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--secondary);
+  margin-bottom: 0.6rem;
+}
+
+.cardBody p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+.cardLink {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--primary);
+  transition: var(--transition);
+}
+
+.cardLink:hover {
+  color: var(--primary-hover);
+}
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 600px) {
+  .section { padding: 3.5rem 0; }
+  .grid { grid-template-columns: 1fr; }
+  .title { font-size: 1.75rem; }
+}

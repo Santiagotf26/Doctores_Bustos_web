@@ -1,54 +1,77 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle2 } from 'lucide-react';
 import styles from './About.module.css';
-import Button from '../ui/Button';
-import aboutImage from '../../assets/about_v2.png';
+import teamImg1 from '../../assets/hero_dentist.png';
+import teamImg2 from '../../assets/hero_smile.png';
+import patientImg from '../../assets/service_estetica.png';
 
 const About = () => {
   return (
-    <section id="nosotros" className={`${styles.about} section-padding`}>
+    <section id="nosotros" className={styles.section}>
       <div className="container">
-        <div className={styles.grid}>
-          <motion.div 
+        <div className={styles.aboutGrid}>
+          {/* Left Column - Label & Team Photos */}
+          <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className={styles.imageContainer}
+            className={styles.leftCol}
           >
-            <div className={styles.imageShape}>
-              <img src={aboutImage} alt="Cuidado Dental" className={styles.image} />
-              <div className={styles.toothIcon}>
-                <svg width="40" height="40" viewBox="0 0 24 24" fill="white" stroke="var(--primary)" strokeWidth="1.5"><path d="M12 2C7 2 5 7 5 12c0 3 1.5 5.5 3 7.5a12 12 0 0 0 8 0c1.5-2 3-4.5 3-7.5 0-5-2-10-7-10z"/></svg>
-              </div>
+            <span className={styles.label}>About Us</span>
+            <div className={styles.teamPhotos}>
+              <img src={teamImg1} alt="Team member 1" className={styles.teamPhoto} />
+              <img src={teamImg2} alt="Team member 2" className={styles.teamPhoto} />
             </div>
           </motion.div>
-          
-          <div className={styles.content}>
-            <span className={styles.subtitle}>NOSOTROS</span>
-            <h2 className={styles.title}>15 Años de Excelencia en Cuidado Dental</h2>
-            <p className={styles.text}>
-              En Drs. Bustos, nos dedicamos a transformar sonrisas con un enfoque humano y profesional. Nuestra clínica en Duitama cuenta con especialistas en todas las áreas de la odontología.
-            </p>
-            
-            <div className={styles.features}>
-              <div className={styles.featureItem}>
-                <CheckCircle2 className={styles.checkIcon} size={20} />
-                <span>Servicios de Odontología Premium</span>
-              </div>
-              <div className={styles.featureItem}>
-                <CheckCircle2 className={styles.checkIcon} size={20} />
-                <span>Especialistas Altamente Calificados</span>
-              </div>
-              <div className={styles.featureItem}>
-                <CheckCircle2 className={styles.checkIcon} size={20} />
-                <span>Tecnología de Vanguardia</span>
-              </div>
-            </div>
 
-            <Button variant="primary" size="lg" className={styles.learnMoreBtn}>Saber Más</Button>
-          </div>
+          {/* Center Column - Main Text */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className={styles.centerCol}
+          >
+            <h2 className={styles.mainText}>
+              We deliver personalized dental treatments with <span className={styles.highlight}>modern</span> technology and gentle care ensuring healthy confident smiles for every patient.
+            </h2>
+          </motion.div>
+
+          {/* Right Column - Patient Image */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className={styles.rightCol}
+          >
+            <div className={styles.patientImageWrap}>
+              <img src={patientImg} alt="Happy patient" className={styles.patientImage} />
+            </div>
+          </motion.div>
         </div>
+
+        {/* Stats Row */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className={styles.statsRow}
+        >
+          <p className={styles.statsLabel}>Thousands Trust Us for Smiles!</p>
+          <div className={styles.statsGrid}>
+            <div className={styles.stat}>
+              <span className={styles.statValue}>98%</span>
+              <span className={styles.statLabel}>Satisfaction Rate</span>
+            </div>
+            <div className={styles.stat}>
+              <span className={styles.statValue}>2k+</span>
+              <span className={styles.statLabel}>Smiles Transformed</span>
+            </div>
+            <div className={styles.stat}>
+              <span className={styles.statValue}>4.9*</span>
+              <span className={styles.statLabel}>Customer Rating</span>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -1,221 +1,281 @@
 .hero {
   position: relative;
-  background-color: #f8fafc;
-  padding-top: 5rem;
-  padding-bottom: 8rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
+  background: linear-gradient(135deg, rgba(15, 23, 41, 0.92) 0%, rgba(15, 23, 41, 0.75) 100%);
 }
 
-.heroContainer {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 2rem;
+/* Background Image */
+.bgImage {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.bgImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center right;
+}
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, rgba(15, 23, 41, 0.95) 0%, rgba(15, 23, 41, 0.6) 50%, rgba(15, 23, 41, 0.3) 100%);
 }
 
+/* Content */
 .content {
-  z-index: 10;
-}
-
-.badge {
-  display: inline-flex;
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
   align-items: center;
-  gap: 0.75rem;
-  background: white;
-  padding: 0.5rem 1rem;
-  border-radius: 9999px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: #1e293b;
-  margin-bottom: 1.5rem;
-  box-shadow: var(--shadow-sm);
+  padding-top: 8rem;
+  padding-bottom: 4rem;
 }
 
-.badgeIcon {
-  color: var(--primary);
+.textCol {
+  max-width: 520px;
 }
 
 .title {
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
-  font-weight: 800;
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(2.75rem, 5vw, 4rem);
+  font-weight: 700;
+  color: white;
   line-height: 1.1;
-  color: #1e293b;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.02em;
 }
 
-.highlight {
-  color: var(--primary);
+.desc {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.7;
+  margin-bottom: 1.75rem;
+  max-width: 400px;
 }
 
-.description {
-  font-size: 1rem;
-  color: #64748b;
-  max-width: 500px;
-  margin-bottom: 2rem;
+.ctaBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.5rem;
+  background: #1e293b;
+  color: white;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: var(--transition);
 }
-
-.actions {
+.ctaBtn:hover {
+  background: #0f172a;
+  transform: translateY(-2px);
+}
+.ctaIcon {
+  width: 24px;
+  height: 24px;
   display: flex;
   align-items: center;
-  gap: 2rem;
+  justify-content: center;
+  background: #0d9488;
+  border-radius: 50%;
+  margin-left: 0.25rem;
 }
 
-.roundedBtn {
-  border-radius: 9999px !important;
+/* Floating Card */
+.floatingCard {
+  margin-top: 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: var(--radius-lg);
+  padding: 0.75rem;
+  max-width: 320px;
+}
+.cardThumb {
+  width: 70px;
+  height: 50px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.cardThumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.cardContent {
+  flex: 1;
+}
+.cardContent p {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+.ratingRow {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.stars {
+  display: flex;
+  gap: 1px;
+}
+.ratingRow span {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.9);
+  font-weight: 600;
 }
 
-.watchVideo {
+/* Bottom Bar */
+.bottomBar {
+  position: relative;
+  z-index: 2;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 1rem 0;
+  margin-top: auto;
+}
+.bottomInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.motto {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.5);
+  font-style: italic;
+}
+.sliderControls {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  font-weight: 600;
-  color: #1e293b;
-  transition: var(--transition);
 }
-
-.watchVideo:hover {
-  color: var(--primary);
-}
-
-.playIcon {
-  width: 32px;
-  height: 32px;
-  background: white;
+.arrowBtn {
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: var(--shadow-md);
-  color: var(--primary);
+  color: rgba(255,255,255,0.5);
+  border: 1px solid rgba(255,255,255,0.15);
+  background: transparent;
+  cursor: pointer;
+  transition: var(--transition);
 }
-
-.imageContainer {
-  position: relative;
+.arrowBtn:hover {
+  border-color: rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.8);
+}
+.slideCount {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.5);
+}
+.slideCount strong {
+  color: white;
+  font-weight: 600;
+  font-size: 0.75rem;
+}
+.scrollHint {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.4);
   display: flex;
-  justify-content: flex-end;
+  align-items: center;
+  gap: 0.35rem;
 }
 
-.blueCircle {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-  width: 450px;
-  height: 450px;
-  background-color: var(--primary);
-  border-radius: 50%;
-  z-index: 1;
-}
-
-.dentistImage {
+/* Service Pills */
+.pillsBar {
   position: relative;
-  width: 100%;
-  max-width: 500px;
   z-index: 2;
+  padding: 1rem 0;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  background: rgba(0,0,0,0.2);
+}
+.pillsInner {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.pill {
+  padding: 0.5rem 1rem;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: var(--radius-pill);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.6);
+  transition: var(--transition);
+  text-decoration: none;
+}
+.pill:hover {
+  border-color: rgba(255,255,255,0.3);
+  color: rgba(255,255,255,0.9);
 }
 
-/* Booking Bar */
-.bookingContainer {
-  position: absolute;
-  bottom: -40px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  z-index: 20;
+/* Process Steps Bar */
+.processBar {
+  position: relative;
+  z-index: 2;
+  background: #f8fafc;
+  padding: 1rem 0;
 }
-
-.bookingBar {
-  background: white;
-  padding: 1.5rem 2rem;
-  border-radius: 1rem;
+.processInner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-shadow: var(--shadow-lg);
-  gap: 1.5rem;
+  gap: 1rem;
 }
-
-.bookingItem {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+.processStep {
   flex: 1;
+  text-align: center;
+  padding: 0.5rem 0;
 }
-
-.bookingItem label {
+.stepName {
   font-size: 0.8rem;
-  font-weight: 700;
-  color: #1e293b;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  color: var(--text-muted);
+  font-weight: 500;
 }
 
-.bookingItem label svg {
-  color: var(--primary);
-}
-
-.bookingItem input {
-  border: none;
-  font-size: 0.9rem;
-  color: #64748b;
-  outline: none;
-  background: transparent;
-}
-
-.divider {
-  width: 1px;
-  height: 40px;
-  background-color: #e2e8f0;
-}
-
-.bookingBtn {
-  border-radius: 0.75rem !important;
-  white-space: nowrap;
-}
-
-@media (max-width: 1024px) {
-  .heroContainer {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-  
+/* Responsive */
+@media (max-width: 768px) {
   .content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    padding-top: 6rem;
+    padding-bottom: 2rem;
   }
-  
-  .actions {
+  .floatingCard {
+    max-width: 100%;
+  }
+  .bottomInner {
+    flex-wrap: wrap;
+    gap: 0.75rem;
     justify-content: center;
   }
-  
-  .imageContainer {
-    justify-content: center;
-    margin-top: 3rem;
-  }
-  
-  .blueCircle {
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 300px;
-    height: 300px;
-  }
-  
-  .bookingBar {
-    flex-direction: column;
-    bottom: -150px;
-  }
-  
-  .divider {
+  .motto, .scrollHint {
     display: none;
   }
-  
-  .bookingItem {
-    width: 100%;
+  .pillsInner {
+    justify-content: flex-start;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
   }
-  
-  .bookingBtn {
-    width: 100%;
+  .pill {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .processInner {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .processStep {
+    flex: 0 0 45%;
   }
 }

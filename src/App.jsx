@@ -2,10 +2,12 @@ import React from 'react';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import Hero from './components/sections/Hero';
-import Services from './components/sections/Services';
 import About from './components/sections/About';
-import Contact from './components/sections/Contact';
-import ServicesTicker from './components/sections/ServicesTicker';
+import Services from './components/sections/Services';
+import FeatureTreatment from './components/sections/FeatureTreatment';
+import Doctors from './components/sections/Doctors';
+import Location from './components/sections/Location';
+import WhatsAppButton from './components/ui/WhatsAppButton';
 
 function App() {
   return (
@@ -14,11 +16,13 @@ function App() {
       <main>
         <Hero />
         <About />
-        <ServicesTicker />
         <Services />
-        <Contact />
+        <FeatureTreatment />
+        <Doctors />
+        <Location />
       </main>
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 }

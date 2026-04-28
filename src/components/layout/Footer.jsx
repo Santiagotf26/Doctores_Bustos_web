@@ -1,53 +1,66 @@
 import React from 'react';
 import styles from './Footer.module.css';
+import Logo from '../ui/Logo';
+
+const WA_LINK = 'https://wa.me/573027447175?text=Hola%2C%20quiero%20agendar%20una%20cita';
 
 const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className="container">
-        <div className={styles.grid}>
+        {/* Top section */}
+        <div className={styles.topGrid}>
           <div className={styles.brand}>
-            <div className={styles.logo}>
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{color: 'var(--primary)'}}><path d="M7 12c.5 0 1 .5 1 1v2c0 .5-.5 1-1 1s-1-.5-1-1v-2c0-.5.5-1 1-1z"/><path d="M17 12c.5 0 1 .5 1 1v2c0 .5-.5 1-1 1s-1-.5-1-1v-2c0-.5.5-1 1-1z"/><path d="M7 18h10a2 2 0 0 1 2 2v1a0 0 0 0 1 0 0H5a0 0 0 0 1 0 0v-1a2 2 0 0 1 2-2z"/><path d="M22 6c0-3-4-5-4-5s-1 1-1 2c0 2 1 3 3 5a3 3 0 0 0 2-2z"/><path d="M2 6c0-3 4-5 4-5s1 1 1 2c0 2-1 3-3 5a3 3 0 0 1-2-2z"/><path d="M12 2C7 2 5 7 5 12c0 3 1.5 5.5 3 7.5a12 12 0 0 0 8 0c1.5-2 3-4.5 3-7.5 0-5-2-10-7-10z"/></svg>
-              <span className={styles.logoText}>Drs.<span>Bustos</span></span>
+            <Logo />
+            <p className={styles.tagline}>
+              Cuidado dental de excelencia con calidez humana en Duitama, Boyacá.
+            </p>
+          </div>
+
+          <div className={styles.linkCol}>
+            <h4>Navegación</h4>
+            <a href="#inicio">Inicio</a>
+            <a href="#nosotros">Nosotros</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#equipo">Equipo</a>
+            <a href="#ubicacion">Contacto</a>
+          </div>
+
+          <div className={styles.linkCol}>
+            <h4>Servicios</h4>
+            <a href="#servicios">Odontología</a>
+            <a href="#servicios">Ortodoncia</a>
+            <a href="#servicios">Estética Dental</a>
+            <a href="#servicios">Implantes</a>
+            <a href="#servicios">Blanqueamiento</a>
+          </div>
+
+          <div className={styles.contactCol}>
+            <h4>Escríbenos</h4>
+            <p className={styles.contactText}>
+              Agenda tu cita o resuelve tus dudas al instante por WhatsApp.
+            </p>
+            <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className={styles.contactBtn}>
+              Agendar Cita →
+            </a>
+            <div className={styles.contactInfo}>
+              <p>📍 Calle 17 #9a-04, Duitama</p>
+              <p>📞 +57 302 744 7175</p>
             </div>
-            <p className={styles.tagline}>Excelencia dental y calidez humana en el corazón de Boyacá.</p>
             <div className={styles.socials}>
-              <a href="#" aria-label="Facebook">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-              </a>
-              <a href="#" aria-label="Instagram">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-              </a>
-              <a href="#" aria-label="Twitter">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
-              </a>
+              <a href="#" aria-label="Facebook">f</a>
+              <a href="#" aria-label="Instagram">in</a>
+              <a href={WA_LINK} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">wa</a>
             </div>
           </div>
-          
-          <div className={styles.links}>
-            <h4 className={styles.linkTitle}>Navegación</h4>
-            <ul>
-              <li><a href="#inicio">Inicio</a></li>
-              <li><a href="#servicios">Servicios</a></li>
-              <li><a href="#nosotros">Nosotros</a></li>
-              <li><a href="#contacto">Contacto</a></li>
-            </ul>
-          </div>
-          
-          <div className={styles.links}>
-            <h4 className={styles.linkTitle}>Legales</h4>
-            <ul>
-              <li><a href="#">Privacidad</a></li>
-              <li><a href="#">Términos</a></li>
-              <li><a href="#">Consentimiento</a></li>
-            </ul>
-          </div>
-          
-          <div className={styles.newsletter}>
-            <h4 className={styles.linkTitle}>Duitama, Boyacá</h4>
-            <p>Visítanos en el Centro Comercial Plaza.</p>
-            <p className={styles.copy}>© 2026 Clínica Drs. Bustos. <br/>Todos los derechos reservados.</p>
+        </div>
+
+        {/* Bottom */}
+        <div className={styles.bottom}>
+          <p>© 2026 Drs. Bustos — Clínica Odontológica. Todos los derechos reservados.</p>
+          <div className={styles.bottomLinks}>
+            <a href="#">Política de Privacidad</a>
+            <a href="#">Términos</a>
           </div>
         </div>
       </div>
