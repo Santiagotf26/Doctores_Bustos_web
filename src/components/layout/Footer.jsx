@@ -1,4 +1,5 @@
 import React from 'react';
+import { MapPin, Phone } from 'lucide-react';
 import styles from './Footer.module.css';
 import Logo from '../ui/Logo';
 
@@ -11,10 +12,15 @@ const Footer = () => {
         {/* Top section */}
         <div className={styles.topGrid}>
           <div className={styles.brand}>
-            <Logo />
+            <Logo variant="light" className={styles.logoWrap} />
             <p className={styles.tagline}>
-              Cuidado dental de excelencia con calidez humana en Duitama, Boyacá.
+              Cuidado dental de excelencia con calidez humana en Duitama, Boyacá. Comprometidos con tu salud oral.
             </p>
+            <div className={styles.socials}>
+              <a href="#" aria-label="Facebook">f</a>
+              <a href="#" aria-label="Instagram">in</a>
+              <a href={WA_LINK} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">wa</a>
+            </div>
           </div>
 
           <div className={styles.linkCol}>
@@ -36,30 +42,25 @@ const Footer = () => {
           </div>
 
           <div className={styles.contactCol}>
-            <h4>Escríbenos</h4>
+            <h4>Contacto</h4>
             <p className={styles.contactText}>
-              Agenda tu cita o resuelve tus dudas al instante por WhatsApp.
+              ¿Tienes dudas? Escríbenos por WhatsApp y te atenderemos de inmediato.
             </p>
-            <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className={styles.contactBtn}>
-              Agendar Cita →
+            <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className={styles.footerCta}>
+              Agendar Cita
             </a>
             <div className={styles.contactInfo}>
-              <p>📍 Calle 17 #9a-04, Duitama</p>
-              <p>📞 +57 302 744 7175</p>
-            </div>
-            <div className={styles.socials}>
-              <a href="#" aria-label="Facebook">f</a>
-              <a href="#" aria-label="Instagram">in</a>
-              <a href={WA_LINK} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">wa</a>
+              <p style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><MapPin size={16} /> Calle 17 #9a-04, Duitama</p>
+              <p style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><Phone size={16} /> +57 302 744 7175</p>
             </div>
           </div>
         </div>
 
         {/* Bottom */}
         <div className={styles.bottom}>
-          <p>© 2026 Drs. Bustos — Clínica Odontológica. Todos los derechos reservados.</p>
+          <p>© 2026 Drs.Bustos — Clínica Odontológica. Todos los derechos reservados.</p>
           <div className={styles.bottomLinks}>
-            <a href="#">Política de Privacidad</a>
+            <a href="#">Privacidad</a>
             <a href="#">Términos</a>
           </div>
         </div>

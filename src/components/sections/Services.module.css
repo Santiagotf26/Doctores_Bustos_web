@@ -7,7 +7,11 @@
   align-items: center;
 }
 
-.textCol { display: flex; flex-direction: column; }
+.textCol { 
+  display: flex; 
+  flex-direction: column; 
+  padding-left: 0;
+}
 
 .label {
   font-size: 0.78rem; font-weight: 600; color: var(--text-muted);

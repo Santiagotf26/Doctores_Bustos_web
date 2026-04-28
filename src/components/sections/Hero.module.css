@@ -31,31 +31,32 @@
   z-index: 2;
   flex: 1;
   display: flex;
-  align-items: center;
-  padding-top: 8rem;
+  align-items: center; /* Restaurado el centrado vertical automático */
+  padding-top: 6rem; /* Espacio seguro base para el header */
   padding-bottom: 4rem;
 }
 
 .textCol {
-  max-width: 520px;
+  max-width: 480px;
+  text-align: left;
 }
 
 .title {
   font-family: 'Inter', sans-serif;
-  font-size: clamp(2.75rem, 5vw, 4rem);
+  font-size: clamp(2.25rem, 4vw, 3.25rem);
   font-weight: 700;
   color: white;
-  line-height: 1.1;
-  margin-bottom: 1.25rem;
+  line-height: 1.15;
+  margin-bottom: 1rem;
   letter-spacing: -0.02em;
 }
 
 .desc {
-  font-size: 0.95rem;
-  color: rgba(255,255,255,0.65);
-  line-height: 1.7;
-  margin-bottom: 1.75rem;
-  max-width: 400px;
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  max-width: 380px;
 }
 
 .ctaBtn {
@@ -244,10 +245,21 @@
   font-weight: 500;
 }
 
+/* Responsive Desktop Adjustment */
+@media (min-width: 1024px) {
+  .content {
+    padding-top: 7rem;
+  }
+  .textCol {
+    margin-top: 5rem; /* Empuja el texto más abajo de forma controlada */
+    margin-left: -3rem; /* Mueve el texto a la izquierda de forma limpia */
+  }
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .content {
-    padding-top: 6rem;
+    padding-top: 9rem;
     padding-bottom: 2rem;
   }
   .floatingCard {

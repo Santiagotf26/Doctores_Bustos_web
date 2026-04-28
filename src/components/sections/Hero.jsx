@@ -1,8 +1,15 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { ChevronLeft, ChevronRight, Star, ChevronDown, Phone } from 'lucide-react';
+import { AnimatePresence, motion } from 'framer-motion';
 import styles from './Hero.module.css';
-import heroImage from '../../assets/hero_dentist.png';
+import heroImage1 from '../../assets/hero_dentist.png';
+import heroImage2 from '../../assets/service_odontologia.png';
+import heroImage3 from '../../assets/service_estetica.png';
+import heroImage4 from '../../assets/hero_smile.png';
+import heroImage5 from '../../assets/service_ortodoncia.png';
 import doctorThumb from '../../assets/service_odontologia.png';
+
+const heroImages = [heroImage1, heroImage2, heroImage3, heroImage4, heroImage5];
 
 const WA_LINK = 'https://wa.me/573027447175?text=Hola%2C%20quiero%20agendar%20una%20cita';
 
@@ -24,9 +31,20 @@ const Hero = () => {
 
   return (
     <section id="inicio" className={styles.hero}>
-      {/* Background Image */}
+      {/* Background Image Carousel */}
       <div className={styles.bgImage}>
-        <img src={heroImage} alt="Cuidado dental" />
+        <AnimatePresence mode="popLayout">
+          <motion.img
+            key={current}
+            src={heroImages[current]}
+            alt="Cuidado dental"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1 }}
+            style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover' }}
+          />
+        </AnimatePresence>
         <div className={styles.overlay} />
       </div>
 
@@ -34,7 +52,7 @@ const Hero = () => {
       <div className={`container ${styles.content}`}>
         <div className={styles.textCol}>
           <h1 className={styles.title}>
-            Cuidado Dental<br/>Familiar y Profesional
+            Cuidado Dental<br/>Familiar y<br/>Profesional
           </h1>
           <p className={styles.desc}>
             Soluciones naturales y duraderas para reemplazar dientes perdidos y restaurar sonrisas saludables y seguras.
