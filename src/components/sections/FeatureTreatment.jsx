@@ -17,29 +17,29 @@ const FeatureTreatment = () => {
             viewport={{ once: true }}
             className={styles.leftContent}
           >
-            <span className={styles.label}>Feature Treatment</span>
+            <span className={styles.label}>Tratamiento Destacado</span>
             <h2 className={styles.title}>
-              Advanced Dental Care<br/>for a Healthier Smile
+              Cuidado Dental Avanzado<br/>para una Sonrisa Más Saludable
             </h2>
             <p className={styles.desc}>
-              Join hundreds of patients achieving healthier, brighter smiles through expert clinicians and personalized treatments.
+              Únete a los cientos de pacientes que logran sonrisas más saludables y brillantes a través de especialistas expertos y tratamientos personalizados.
             </p>
 
             {/* Doctor Card */}
             <div className={styles.doctorCard}>
-              <img src={doctorImg} alt="Dr. Daniel Carter" className={styles.doctorImg} />
+              <img src={doctorImg} alt="Dr. Juan Camilo Bustos" className={styles.doctorImg} />
               <div className={styles.doctorInfo}>
-                <h4>Dr. Daniel Carter</h4>
-                <p>Lead Dental Specialist</p>
+                <h4>Dr. Juan Camilo Bustos</h4>
+                <p>Especialista Líder en Ortodoncia</p>
                 <div className={styles.rating}>
                   <Star size={12} fill="#fbbf24" color="#fbbf24" />
-                  <span>4.9 (40+ reviews)</span>
+                  <span>4.9 (45+ reseñas)</span>
                 </div>
               </div>
             </div>
 
             <p className={styles.doctorDesc}>
-              Join hundreds of patients achieving healthier, brighter smiles through expert clinicians.
+              Únete a los cientos de pacientes que logran sonrisas más saludables y brillantes a través de especialistas expertos.
             </p>
           </motion.div>
 
@@ -52,20 +52,20 @@ const FeatureTreatment = () => {
           >
             {/* Main Clinic Image */}
             <div className={styles.clinicImageWrap}>
-              <img src={clinicImg} alt="Dental clinic" className={styles.clinicImage} />
+              <img src={clinicImg} alt="Clínica dental" className={styles.clinicImage} />
             </div>
 
             {/* Stats Card */}
             <div className={styles.statsCard}>
               <div className={styles.statItem}>
-                <span className={styles.statLabel}>Recommendation</span>
-                <span className={styles.statValue}>2 Visits</span>
-                <span className={styles.statSub}>Checkups Per Year</span>
+                <span className={styles.statLabel}>Recomendación</span>
+                <span className={styles.statValue}>2 Visitas</span>
+                <span className={styles.statSub}>Chequeos por Año</span>
               </div>
               <div className={styles.statDivider}></div>
               <div className={styles.statItem}>
-                <span className={styles.statLabel}>Average Treatment Time</span>
-                <span className={styles.statValue}>40 Mins</span>
+                <span className={styles.statLabel}>Tiempo Promedio de Tratamiento</span>
+                <span className={styles.statValue}>40 Min</span>
                 <div className={styles.progressBar}>
                   <div className={styles.progressFill} style={{ width: '60%' }}></div>
                 </div>

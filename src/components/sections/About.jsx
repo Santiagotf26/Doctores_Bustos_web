@@ -17,10 +17,10 @@ const About = () => {
             viewport={{ once: true }}
             className={styles.leftCol}
           >
-            <span className={styles.label}>About Us</span>
+            <span className={styles.label}>Nosotros</span>
             <div className={styles.teamPhotos}>
-              <img src={teamImg1} alt="Team member 1" className={styles.teamPhoto} />
-              <img src={teamImg2} alt="Team member 2" className={styles.teamPhoto} />
+              <img src={teamImg1} alt="Miembro del equipo 1" className={styles.teamPhoto} />
+              <img src={teamImg2} alt="Miembro del equipo 2" className={styles.teamPhoto} />
             </div>
           </motion.div>
 
@@ -32,7 +32,7 @@ const About = () => {
             className={styles.centerCol}
           >
             <h2 className={styles.mainText}>
-              We deliver personalized dental treatments with <span className={styles.highlight}>modern</span> technology and gentle care ensuring healthy confident smiles for every patient.
+              Ofrecemos tratamientos dentales personalizados con tecnología <span className={styles.highlight}>moderna</span> y un cuidado delicado para asegurar sonrisas saludables y seguras para cada paciente.
             </h2>
           </motion.div>
 
@@ -44,7 +44,7 @@ const About = () => {
             className={styles.rightCol}
           >
             <div className={styles.patientImageWrap}>
-              <img src={patientImg} alt="Happy patient" className={styles.patientImage} />
+              <img src={patientImg} alt="Paciente feliz" className={styles.patientImage} />
             </div>
           </motion.div>
         </div>
@@ -56,19 +56,19 @@ const About = () => {
           viewport={{ once: true }}
           className={styles.statsRow}
         >
-          <p className={styles.statsLabel}>Thousands Trust Us for Smiles!</p>
+          <p className={styles.statsLabel}>¡Miles de personas confían en nosotros!</p>
           <div className={styles.statsGrid}>
             <div className={styles.stat}>
               <span className={styles.statValue}>98%</span>
-              <span className={styles.statLabel}>Satisfaction Rate</span>
+              <span className={styles.statLabel}>Tasa de Satisfacción</span>
             </div>
             <div className={styles.stat}>
               <span className={styles.statValue}>2k+</span>
-              <span className={styles.statLabel}>Smiles Transformed</span>
+              <span className={styles.statLabel}>Sonrisas Transformadas</span>
             </div>
             <div className={styles.stat}>
               <span className={styles.statValue}>4.9*</span>
-              <span className={styles.statLabel}>Customer Rating</span>
+              <span className={styles.statLabel}>Calificación de Clientes</span>
             </div>
           </div>
         </motion.div>
