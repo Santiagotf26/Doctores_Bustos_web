@@ -1,0 +1,124 @@
+.footer {
+  background-color: var(--secondary);
+  color: white;
+  padding: 5rem 0 3rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+  gap: 4rem;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logoText {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: white;
+}
+
+.logoText span {
+  color: var(--primary);
+}
+
+.tagline {
+  color: #9ca3af;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.socials {
+  display: flex;
+  gap: 1rem;
+}
+
+.socials a {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  color: #9ca3af;
+}
+
+.socials a:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-3px);
+}
+
+.linkTitle {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+.links ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.links a {
+  color: #9ca3af;
+  transition: var(--transition);
+  font-size: 0.95rem;
+}
+
+.links a:hover {
+  color: var(--primary);
+  padding-left: 5px;
+}
+
+.newsletter p {
+  color: #9ca3af;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+.copy {
+  font-size: 0.8rem !important;
+  color: #6b7280 !important;
+  margin-top: 2rem;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer {
+    text-align: center;
+  }
+  
+  .logo, .socials {
+    justify-content: center;
+  }
+  
+  .links a:hover {
+    padding-left: 0;
+  }
+}

@@ -1,0 +1,221 @@
+.hero {
+  position: relative;
+  background-color: #f8fafc;
+  padding-top: 5rem;
+  padding-bottom: 8rem;
+  overflow: hidden;
+}
+
+.heroContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 2rem;
+}
+
+.content {
+  z-index: 10;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: white;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.badgeIcon {
+  color: var(--primary);
+}
+
+.title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: #1e293b;
+  margin-bottom: 1.5rem;
+}
+
+.highlight {
+  color: var(--primary);
+}
+
+.description {
+  font-size: 1rem;
+  color: #64748b;
+  max-width: 500px;
+  margin-bottom: 2rem;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.roundedBtn {
+  border-radius: 9999px !important;
+}
+
+.watchVideo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 600;
+  color: #1e293b;
+  transition: var(--transition);
+}
+
+.watchVideo:hover {
+  color: var(--primary);
+}
+
+.playIcon {
+  width: 32px;
+  height: 32px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+  color: var(--primary);
+}
+
+.imageContainer {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.blueCircle {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 450px;
+  height: 450px;
+  background-color: var(--primary);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.dentistImage {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  z-index: 2;
+}
+
+/* Booking Bar */
+.bookingContainer {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  z-index: 20;
+}
+
+.bookingBar {
+  background: white;
+  padding: 1.5rem 2rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: var(--shadow-lg);
+  gap: 1.5rem;
+}
+
+.bookingItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.bookingItem label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #1e293b;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.bookingItem label svg {
+  color: var(--primary);
+}
+
+.bookingItem input {
+  border: none;
+  font-size: 0.9rem;
+  color: #64748b;
+  outline: none;
+  background: transparent;
+}
+
+.divider {
+  width: 1px;
+  height: 40px;
+  background-color: #e2e8f0;
+}
+
+.bookingBtn {
+  border-radius: 0.75rem !important;
+  white-space: nowrap;
+}
+
+@media (max-width: 1024px) {
+  .heroContainer {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .actions {
+    justify-content: center;
+  }
+  
+  .imageContainer {
+    justify-content: center;
+    margin-top: 3rem;
+  }
+  
+  .blueCircle {
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+  }
+  
+  .bookingBar {
+    flex-direction: column;
+    bottom: -150px;
+  }
+  
+  .divider {
+    display: none;
+  }
+  
+  .bookingItem {
+    width: 100%;
+  }
+  
+  .bookingBtn {
+    width: 100%;
+  }
+}
